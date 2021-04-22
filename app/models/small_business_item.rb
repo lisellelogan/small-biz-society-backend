@@ -1,3 +1,3 @@
 class SmallBusinessItem < ApplicationRecord
-    belongs_to: :small_business
+    belongs_to :small_business
 end

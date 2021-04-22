@@ -1,7 +1,7 @@
 class SmallBusinessItemsController < ApplicationController
     def index
         items = SmallBusinessItem.all
-        render json: SmallBusinessItemSerializer.new(items)
+        render json: SmallBusinessItemSerializer.new(items, include: [:small_business])
     end
 
     def show 

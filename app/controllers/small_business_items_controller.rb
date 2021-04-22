@@ -1,0 +1,2 @@
+class SmallBusinessItemsController < ApplicationController
+end

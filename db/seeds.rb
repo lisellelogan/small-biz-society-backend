@@ -15,5 +15,7 @@ trash_to_treasure = SmallBusiness.create(name: "Trash To Treasure", price_range:
 
 #create small business items
 the_coffee_spot.small_business_items.create([
-    {name: "Cold Brew", price: 3.50, description: "Made in house. Has been steeped with ground coffee in room temperature overnight to produce coffee concentrate. IS diluted with water and served over ice.", image_url: "insert image of cold brew here", type_of_product: "Coffee & Tea"}
+    {name: "Cold Brew", price: 3.50, description: "Made in house. Has been steeped with ground coffee in room temperature overnight to produce coffee concentrate. IS diluted with water and served over ice.", image_url: "insert image of cold brew here", type_of_product: "Coffee & Tea"},
+    {name: "Latte", price: 4.50, description: "Two shots of espresso with your choice of milk. Can be iced or hot.", image_url: "add latte image here", type_of_product: "Coffee & Tea"},
+    {name: "Drip Coffee", price: 3.75, description: "Hot water poured over our freshly ground coffee.", image_url: "add drip coffee image here", type_of_product: "Coffee & Tea"}
 ])

@@ -8,4 +8,10 @@ class SmallBusinessesController < ApplicationController
         small_business = SmallBusiness.find_by(params[:id])
         render json: SmallBusinessSerializer.new(small_business)
     end
+
+    private
+
+    def small_business_params
+        params.require(:small_business).permit(:name, :price_range, :address)
+    end
 end

@@ -9,6 +9,11 @@ class SmallBusinessesController < ApplicationController
         render json: SmallBusinessSerializer.new(small_business)
     end
 
+    def create
+        small_business = SmallBusiness.find_or_create_by(small_business_params)
+        render json: SmallBusinessItemSerializer.new(small_business)
+    end
+
     private
 
     def small_business_params

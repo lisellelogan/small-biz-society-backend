@@ -11,7 +11,7 @@ class SmallBusinessItemsController < ApplicationController
 
     def create
         item = SmallBusinessItem.find_or_create_by(small_business_item_params)
-        render json: SmallBusinessSerializer.new(item)
+        render json: SmallBusinessItemSerializer.new(item)
     end
 
     private

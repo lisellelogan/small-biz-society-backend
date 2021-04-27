@@ -14,6 +14,12 @@ class SmallBusinessItemsController < ApplicationController
         render json: SmallBusinessItemSerializer.new(item)
     end
 
+    def destroy 
+        item = SmallBusinessItem.find_by(params[:id])
+        item.destroy
+        render json: {message: "#{item.name} was deleted!"}
+    end
+
     private
 
     def small_business_item_params

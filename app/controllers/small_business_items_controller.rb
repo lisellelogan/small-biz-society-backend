@@ -5,7 +5,7 @@ class SmallBusinessItemsController < ApplicationController
     end
 
     def show 
-        item = SmallBusinessItem.find_by(params[:id])
+        item = SmallBusinessItem.find(params[:id])
         render json: SmallBusinessItemSerializer.new(item)
     end
 
@@ -15,7 +15,7 @@ class SmallBusinessItemsController < ApplicationController
     end
 
     def update
-        item = SmallBusinessItem.find_by(params[:id])
+        item = SmallBusinessItem.find(params[:id])
         if item.update(small_business_item_params)
             render json: {message: "#{item.name} was updated!"}
         else 
@@ -24,7 +24,7 @@ class SmallBusinessItemsController < ApplicationController
     end
 
     def destroy 
-        item = SmallBusinessItem.find_by(params[:id])
+        item = SmallBusinessItem.find(params[:id])
         item.destroy
         render json: {message: "#{item.name} was deleted!"}
     end

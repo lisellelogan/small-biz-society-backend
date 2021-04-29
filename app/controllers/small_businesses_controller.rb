@@ -5,7 +5,7 @@ class SmallBusinessesController < ApplicationController
     end
 
     def show 
-        small_business = SmallBusiness.find_by(params[:id])
+        small_business = SmallBusiness.find(params[:id])
         render json: SmallBusinessSerializer.new(small_business)
     end
 
@@ -15,7 +15,7 @@ class SmallBusinessesController < ApplicationController
     end
 
     def update 
-        small_business = SmallBusiness.find_by(params[:id])
+        small_business = SmallBusiness.find(params[:id])
         if small_business.update(small_business_params)
             render json: {message: "#{small_business.name} was updated!"}
         else  
@@ -24,7 +24,7 @@ class SmallBusinessesController < ApplicationController
     end
 
     def destroy
-        small_business = SmallBusiness.find_by(params[:id])
+        small_business = SmallBusiness.find(params[:id])
         small_business.destroy
         render json: {message: "#{small_business.name} was deleted!"}
     end

@@ -14,6 +14,15 @@ class SmallBusinessesController < ApplicationController
         render json: SmallBusinessSerializer.new(small_business)
     end
 
+    def update 
+        small_business = SmallBusiness.find_by(params[:id])
+        if small_business.update(small_business_params)
+            render json: {message: "#{small_business.name} was updated!"}
+        else  
+            render json: {message: "unable to update biz. please try again!"}
+        end
+    end
+
     def destroy
         small_business = SmallBusiness.find_by(params[:id])
         small_business.destroy
